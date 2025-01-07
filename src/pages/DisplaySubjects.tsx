@@ -25,6 +25,8 @@ export const DisplaySubjectsQuizzes = () => {
             const professor = professors.find((prof) => prof.userId === user.id);
             
             if (professor) {
+                console.log(quizzes);
+                
                 setProfessor(professor);
                 setSubjects2Display(subjects.filter((subject) => subject.professorIDs.includes(professor.id)));
                 setQuizzes2Display(quizzes.filter((quiz) => professor.quizIDs.includes(quiz.id)));

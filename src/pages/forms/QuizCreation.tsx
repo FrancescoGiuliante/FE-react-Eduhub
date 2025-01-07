@@ -20,10 +20,9 @@ const QuizCreation: React.FC = () => {
     const { token } = useAuth();    
     const API_URL = import.meta.env.VITE_API_URL;
 
-
-    const { handleQuizCreate, questions } = useInfoClassContext();
+    const { handleQuizCreate, questions, associateQuestionsWithQuiz } = useInfoClassContext();
     const { user } = useAuth();
-    const { professors } = useStoreContext();
+    const { professors, handleProfessorEdit } = useStoreContext();
     const { toast } = useToast();
     const navigate = useNavigate();
     const [selectedQuestions, setSelectedQuestions] = useState<(IQuestion & { value: 1 | 2 | 3 })[]>([]);
@@ -80,6 +79,7 @@ const QuizCreation: React.FC = () => {
 
         try {
             const createdQuiz = await handleQuizCreate(newQuiz);
+            associateQuestionsWithQuiz(createdQuiz.id, selectedQuestions);
 
             for (const question of selectedQuestions) {
                 const payload = {
@@ -94,6 +94,14 @@ const QuizCreation: React.FC = () => {
                 });
             }
 
+            const professor = professors.find(p => p.id === selectedRule.professorID);
+            if (professor) {
+                const updatedProfessor = {
+                    ...professor,
+                    quizIDs: [...professor.quizIDs, createdQuiz.id]
+                };
+                await handleProfessorEdit(updatedProfessor);
+            }
 
             toast({
                 title: "Quiz Created Successfully",
@@ -104,11 +112,8 @@ const QuizCreation: React.FC = () => {
             setSelectedQuestions([]);
             setSelectedRule(null);
             setAvailableQuestions(professorQuestions);
-            
 
-            setTimeout(() => {
-                navigate("/home/tables-sub&quiz");
-            }, 3000);
+            navigate("/home/tables-sub&quiz");
         } catch (error) {
             console.error("Error creating quiz:", error);
             toast({
@@ -118,7 +123,6 @@ const QuizCreation: React.FC = () => {
             });
         }
     };
-
 
     return (
         <div className="flex h-full">

@@ -27,6 +27,7 @@ interface IInfoClassContextProps extends IInfoClassContextState {
     handleRuleCreate: (ruleData: Omit<IRule, "id">) => void;
     handleRuleEdit: (ruleUpdData: Partial<IRule>) => void;
     handleRuleDelete: (id: IRule["id"]) => void;
+    associateQuestionsWithQuiz: (quizID: number, selectedQuestions: IQuestion[]) => void;
 }
 
 type InfoClassAction =
@@ -493,7 +494,9 @@ export const InfoClassProvider = ({ children }: { children: ReactNode }) => {
 
             dispatch({
                 type: "ADD_QUIZ",
-                payload: quiz,
+                payload: {
+                    quiz,
+                },
             });
 
             return quiz;
@@ -503,6 +506,17 @@ export const InfoClassProvider = ({ children }: { children: ReactNode }) => {
         }
     }
 
+    const associateQuestionsWithQuiz = (quizID: number, selectedQuestions: IQuestion[]) => {
+        dispatch({
+            type: "UPDATE_QUIZ",
+            payload: {
+                quiz: {
+                    id: quizID,
+                    questions: selectedQuestions,
+                },
+            },
+        });
+    };
 
     function handleQuizEdit(quizUpdData: Partial<IQuiz>) {
         if (token && quizUpdData.id) {
@@ -631,6 +645,7 @@ export const InfoClassProvider = ({ children }: { children: ReactNode }) => {
                 handleRuleCreate,
                 handleRuleEdit,
                 handleRuleDelete,
+                associateQuestionsWithQuiz,
             }}
         >
             {children}

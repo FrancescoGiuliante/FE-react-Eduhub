@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { ButtonHTMLAttributes } from 'react'
 
 import { Link } from 'react-router-dom'
 
-export interface IMenuItemProps {
+export interface IMenuItemProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   title: string;
   description: string;
   to: string;

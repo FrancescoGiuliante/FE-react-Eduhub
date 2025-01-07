@@ -57,11 +57,9 @@ export function DropdownAvatar({ trigger, items }: IDropdownProps) {
                                     className="flex w-full items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                                     onClick={() => {
                                         setIsOpen(false);
-                                        // Se c'è una funzione onClick, eseguiamo quella
                                         if (item.onClick) {
                                             item.onClick();
                                         }
-                                        // Se c'è un `to`, navighiamo verso quella destinazione
                                         else if (item.to) {
                                             navigate(item.to);
                                         }

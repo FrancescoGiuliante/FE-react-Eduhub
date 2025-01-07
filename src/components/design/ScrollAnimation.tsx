@@ -1,38 +1,35 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
 
-// Registrare il plugin ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
 const ScrollAnimation = () => {
   useEffect(() => {
-    // Animazione per l'immagine
     gsap.to("#image", {
       scrollTrigger: {
-        trigger: "#image", // L'animazione inizia quando l'immagine entra nel viewport
-        start: "top bottom", // Inizia quando la parte superiore dell'immagine entra nel viewport
-        end: "bottom top", // L'animazione finisce quando la parte inferiore dell'immagine esce dalla parte superiore del viewport
-        scrub: true, // L'animazione segue lo scroll
+        trigger: "#image",
+        start: "top bottom", 
+        end: "bottom top", 
+        scrub: true, 
       },
-      x: "-80vw", // L'immagine si sposterà da destra a sinistra
-      duration: 1, // Imposta una durata per un movimento fluido
-      ease: "none", // Per un movimento lineare
+      x: "-80vw", 
+      duration: 1,
+      ease: "none", 
     });
 
-    // Animazione per il testo (cambia l'opacità in base allo scroll)
     gsap.to("#text", {
       scrollTrigger: {
-        trigger: "#image", // La visibilità segue la stessa trigger dell'immagine
-        start: "bottom bottom", // Inizia quando la parte superiore dell'immagine entra nel viewport
-        end: "bottom center", // Finisce quando la parte inferiore dell'immagine esce dalla parte superiore
-        scrub: true, // L'animazione segue lo scroll
+        trigger: "#image", 
+        start: "bottom bottom",
+        end: "bottom center",
+        scrub: true,
       },
-      opacity: 1, // Il testo diventa visibile
-      duration: 1, // Velocità di transizione
-      ease: "none", // Per un movimento lineare
+      opacity: 1,
+      duration: 1, 
+      ease: "none", 
     });
   }, []);
 

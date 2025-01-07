@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
-import { LogIn, User } from "lucide-react" // Importa le icone LogIn e User da Lucide
-import LogoGif from "../LogoGif" // Presumendo che il logo sia in questo componente
+import { LogIn, User } from "lucide-react" 
+import LogoGif from "../LogoGif" 
 import { Button } from "@/components/ui/button"
 import { Link } from "react-router-dom"
 
@@ -28,14 +28,14 @@ const NavbarOutside = () => {
                         <Link to="login">
                             <Button variant="link" className="text-gray-700 hover:text-[#818bff] flex items-center space-x-2">
                                 <LogIn className="w-5 h-5" />
-                                <span className="hidden md:block">Login</span> {/* Solo visibile su schermi md e superiori */}
+                                <span className="hidden md:block">Login</span> 
                             </Button>
                         </Link>
 
                         <Link to="register">
                             <Button className="hover:bg-[#818bff] text-white px-4 py-2 flex items-center space-x-2">
                                 <User className="w-5 h-5" />
-                                <span className="hidden md:block">Register</span> {/* Solo visibile su schermi md e superiori */}
+                                <span className="hidden md:block">Register</span> 
                             </Button>
                         </Link>
                     </div>

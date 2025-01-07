@@ -2,20 +2,26 @@ import { Menu } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { AvatarGif } from "../Avatar"
-import MenuItem from './MenuItem' // Importiamo il componente MenuItem
+import MenuItem from './MenuItem'
 
 interface MenuItemData {
   title: string;
   description: string;
+  to: string;
 }
 
 interface MobileMenuProps {
-  menuItems: { title: string; items: MenuItemData[] }[]; // Modifichiamo la tipizzazione per usare MenuItemData
+  menuItems: { title: string; items: MenuItemData[] }[];
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ menuItems, isOpen, setIsOpen }) => {
+
+  const handleMenuItemClick = () => {
+    setIsOpen(false); 
+  }
+
   return (
     <div className="flex items-center">
       <AvatarGif />
@@ -36,7 +42,8 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ menuItems, isOpen, setIsOpen })
                     key={subIndex}
                     title={subItem.title}
                     description={subItem.description}
-                    to='#'
+                    to={subItem.to}
+                    onClick={handleMenuItemClick}
                   />
                 ))}
               </div>

@@ -121,7 +121,7 @@ const Navbar = () => {
             {
               title: "Quizzes",
               description: "Test your knowledge.",
-              to: "#"
+              to: "/home/table-free-quizzes"
             }
           ]
         }

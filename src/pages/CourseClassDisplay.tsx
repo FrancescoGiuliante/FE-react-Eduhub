@@ -1,7 +1,7 @@
 import { CourseClassCard } from '@/components/card/CourseClassCard'
 import { useStoreContext } from '@/contexts/StoreContext'
 import { BookOpen } from 'lucide-react'
-import React, { Suspense } from 'react'
+import { Suspense } from 'react'
 
 export const CourseClassDisplay = () => {
 

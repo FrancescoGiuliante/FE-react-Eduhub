@@ -1,5 +1,4 @@
 import { CardFreeCourses } from '@/components/card/CardFreeCourses'
-import React from 'react'
 
 export const FreeCourses = () => {
   return (

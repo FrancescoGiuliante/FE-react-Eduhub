@@ -3,7 +3,7 @@ import { useAuth } from '@/contexts/AuthContext'
 import { useStoreContext } from '@/contexts/StoreContext'
 import ICourseClass from '@/interfaces/CourseClass'
 import { BookOpen } from 'lucide-react'
-import React, { Suspense, useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 
 export const MyCourseClasses = () => {
     const { user } = useAuth();

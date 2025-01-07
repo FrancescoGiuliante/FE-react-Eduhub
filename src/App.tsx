@@ -32,6 +32,7 @@ import { StudentQuizzes } from './pages/StudentQuizzes';
 import { FreeCourses } from './pages/FreeCourses';
 import { EventsProvider } from './contexts/EventsContext';
 import { ClassActivity } from './pages/ClassActivity';
+import { FreeQuizzes } from './pages/FreeQuizzes';
 
 
 const getRoleFromToken = (token: string) => {
@@ -108,6 +109,16 @@ function App() {
                             <ProtectedRoute>
                                 <FreeCourses />
                             </ProtectedRoute>
+                        }
+                    />
+                    <Route
+                        path="table-free-quizzes"
+                        element={
+                            <StoreProvider >
+                                <InfoClassProvider>
+                                    <FreeQuizzes />
+                                </InfoClassProvider>
+                            </StoreProvider>
                         }
                     />
                     <Route

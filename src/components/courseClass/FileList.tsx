@@ -37,6 +37,8 @@ export function FileList({ classId }: FileListProps) {
       const data = await response.json();
       setFiles(data);
     } catch (error) {
+      console.log(error);
+      
       // console.error('Error fetching files:', error);
       // if (!(error instanceof Error) || error.message !== 'Failed to fetch files: OK') {
       //   toast({

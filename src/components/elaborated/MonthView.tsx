@@ -1,4 +1,3 @@
-import React from 'react'
 import { format, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth, isToday, isSameDay, isSaturday, isSunday, getDay } from 'date-fns'
 import { motion } from 'framer-motion'
 import ILesson from '@/interfaces/Lesson'

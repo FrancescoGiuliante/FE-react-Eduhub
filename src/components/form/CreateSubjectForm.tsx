@@ -9,7 +9,6 @@ import { useStoreContext } from '@/contexts/StoreContext'
 import { useAuth } from '@/contexts/AuthContext'
 import { useInfoClassContext } from '@/contexts/InfoClassContext'
 import { useToast } from '@/hooks/use-toast'
-import { Toaster } from '../ui/toaster'
 
 interface CreateSubjectFormProps {
     onSubmit: () => void;
@@ -122,7 +121,6 @@ export const CreateSubjectForm: React.FC<CreateSubjectFormProps> = ({ onSubmit }
                 {errors.professors && <p className="text-red-500 text-sm">{errors.professors.message as string}</p>}
             </div>
             <Button type="submit">Create Subject</Button>
-            {/* <Toaster /> */}
         </form>
     )
 }

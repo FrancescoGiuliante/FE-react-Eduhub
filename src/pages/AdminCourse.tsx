@@ -31,8 +31,8 @@ export const AdminCourse = () => {
     }, [courseID]);
 
     return (
-        <div className='flex flex-col pb-20 gap-8 justify-items-center mx-auto max-w-xs md:max-w-4xl'>
-            <div className='flex gap-5 items-center mx-auto'>
+        <div className='flex flex-col pb-20 mt-20 md:mt-0 gap-8 justify-items-center mx-auto max-w-xs md:max-w-4xl'>
+            <div className='flex flex-col md:flex-row gap-5 items-center mx-auto'>
                 <h1 className='text-5xl text-[#636ee4] font-bold'>{course?.path}</h1>
                 <img src="/assets/gifs/courseAdmin.gif" className='max-w-60' alt="" />
             </div>

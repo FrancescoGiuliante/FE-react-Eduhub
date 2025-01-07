@@ -31,7 +31,6 @@ const LoginForm = () => {
 
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
-    /* react hook form implementation */
     const {
         register,
         handleSubmit,
@@ -68,7 +67,7 @@ const LoginForm = () => {
                         {...register("email", { required: true })}
                         placeholder="Email"
                         type="email"
-                        style={{ paddingLeft: "2.5rem" }} // Padding for the icon
+                        style={{ paddingLeft: "2.5rem" }}
                     />
                     <AtSign className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" />
                 </div>
@@ -81,7 +80,7 @@ const LoginForm = () => {
                         placeholder="Password"
                         className="pr-10"
                         type={isPasswordVisible ? "text" : "password"}
-                        style={{ paddingLeft: "2.5rem" }} // Padding for the icon
+                        style={{ paddingLeft: "2.5rem" }} 
                     />
                     <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" />
                     <Button

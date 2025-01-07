@@ -3,7 +3,6 @@ import { AdminHome } from '@/pages/homes/AdminHome';
 import { ProfessorHome } from '@/pages/homes/ProfessorHome';
 import { StudentHome } from '@/pages/homes/StudentHome';
 import { UserHome } from '@/pages/homes/UserHome';
-import React from 'react'
 
 const HomeRoutes = () => {
     const { user } = useAuth();

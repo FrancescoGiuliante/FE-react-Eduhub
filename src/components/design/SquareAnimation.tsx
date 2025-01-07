@@ -1,15 +1,13 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// Registriamo il plugin ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
 export const SquareAnimation = () => {
     useEffect(() => {
-        // Animazione per ogni quadrato
         gsap.fromTo(
-            ".square-element", // Selettore per gli elementi
+            ".square-element",
             {
                 opacity: 0, 
                 y: 200,
@@ -24,8 +22,7 @@ export const SquareAnimation = () => {
                     trigger: ".square-animation", 
                     start: "top bottom",
                     end: "bottom top", 
-                    scrub: true, // Permette l'animazione durante lo scroll
-                    // markers: true, // Mostra i markers per il debug
+                    scrub: true, 
                 },
             }
         );

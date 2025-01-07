@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 
 export const StudentQuizzes = () => {
     const { user } = useAuth();
-    const { quizzes, subjects } = useInfoClassContext();
+    const { quizzes } = useInfoClassContext();
     const { students, courseClasses } = useStoreContext();
     const [quizzes2Display, setQuizzes2Display] = useState<IQuiz[]>([]);
 

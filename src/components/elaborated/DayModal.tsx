@@ -35,7 +35,9 @@ export function DayModal({ isOpen, onClose, selectedDate, onAddLesson, lessons }
     if (user?.role === 'PROFESSOR') {
       const currentProfessor = professors.find(p => p.userId === user.id)
       setProfessor(currentProfessor)
+      
       if (currentProfessor) {
+        setSelectedProfessor(currentProfessor.id.toString())
         const professorSubjects = subjects.filter(subject =>
           subject.professorIDs.includes(currentProfessor.id)
         )

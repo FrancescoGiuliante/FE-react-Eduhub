@@ -47,6 +47,11 @@ export const QuizCard: React.FC<IQuizCardProps> = ({ quiz, subjectName }) => {
                             <PlayCircle className="h-3 w-3 mr-1" />
                             Take Quiz
                         </Button>
+                    ) : user?.role === 'USER' ? (
+                        <Button variant="outline" size="sm" onClick={() => setIsViewDialogOpen(true)}>
+                            <Eye className="h-3 w-3 mr-1" />
+                            View
+                        </Button>
                     ) : null}
                 </div>
             </CardContent>

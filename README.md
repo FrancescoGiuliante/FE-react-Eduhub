@@ -13,7 +13,7 @@ To start the project, follow these steps:
 1. Clona il repository / Clone the repository:
     ```sh
     git clone https://github.com/FrancescoGiuliante/FE-react-Eduhub.git
-    cd FE-React
+    cd FE-React-Eduhub
     ```
 
 2. Installa le dipendenze / Install dependencies:
@@ -40,21 +40,6 @@ Ecco quattro profili di prova per testare l'app:
 
 Here are four test profiles for testing the app:
 
-1. **Admin**
-    - Email: admin@email.com
-    - Password: 123456789
-
-2. **Professor**
-    - Email: profr@email.com
-    - Password: 123456789
-
-3. **Student**
-    - Email: student@email.com
-    - Password: 123456789
-
-4. **Guest**
-    - Email: user@email.com
-    - Password: 123456789
 
 ## Struttura del Progetto / Project Structure
 
